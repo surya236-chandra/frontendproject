@@ -1,0 +1,227 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+.background-orbitals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.orbital-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  animation: pulse-orbit 4s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-orbit {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+.hero-title {
+  color: var(--color-primary-light);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  z-index: 10;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+  }
+}
+
+.hero-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+  align-items: center;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .hero-column {
+    width: 33.333%;
+    margin-bottom: 0;
+  }
+  .column-left {
+    align-items: flex-end;
+  }
+  .column-right {
+    align-items: flex-start;
+  }
+}
+
+.feature-card {
+  background-color: var(--color-primary-light);
+  color: white;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 384px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: 160px;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .feature-card {
+    padding: 2rem;
+  }
+  .feature-card.align-right {
+    text-align: right;
+    border-radius: 8px 0 0 8px;
+  }
+  .feature-card.align-left {
+    text-align: left;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .feature-card p {
+    font-size: 1rem;
+  }
+}
+
+.feature-tab {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 2rem;
+  background-color: #8b5cf6;
+}
+
+@media (min-width: 768px) {
+  .feature-tab {
+    display: block;
+  }
+  .feature-card.align-right .feature-tab {
+    right: -3.5rem;
+  }
+  .feature-card.align-left .feature-tab {
+    left: -3.5rem;
+  }
+}
+
+.astronaut-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .astronaut-container {
+    width: 33.333%;
+    margin-bottom: 0;
+  }
+}
+
+.astronaut-wrapper {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .astronaut-wrapper {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.astronaut-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-primary-light);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.astronaut-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+}

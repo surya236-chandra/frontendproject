@@ -1,0 +1,202 @@
+.timeline-section {
+  width: 100%;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-bg-glow {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.glow-left {
+  top: 0;
+  left: 25%;
+  background-color: var(--color-primary-light);
+}
+
+.glow-right {
+  bottom: 0;
+  right: 25%;
+  background-color: #8b5cf6;
+}
+
+.timeline-title {
+  color: var(--color-primary-light);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.timeline-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .timeline-container {
+    padding: 0 2rem;
+  }
+}
+
+.timeline-scroll-area {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.timeline-scroll-area.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none; /* Disable snapping while dragging */
+  scroll-behavior: auto; /* Disable smooth scrolling while dragging to avoid lag */
+}
+
+.timeline-scroll-area.is-dragging .timeline-item {
+  user-select: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.timeline-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.timeline-scroll-area {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.timeline-item {
+  flex: 0 0 auto;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  scroll-snap-align: start;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    width: 20rem;
+  }
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+}
+
+.timeline-item h3 {
+  color: #8b5cf6;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover h3 {
+  color: white;
+}
+
+.timeline-bar-wrapper {
+  position: relative;
+  height: 0.75rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-bar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2a2a35;
+  border-radius: 0.25rem;
+}
+
+.timeline-bar-active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.25rem;
+  transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: var(--color-primary-dark);
+}
+
+.timeline-item.is-active .timeline-bar-active {
+  background-color: var(--color-primary-light);
+}
+
+.timeline-bar-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-primary-light);
+  opacity: 0;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.timeline-item:hover .timeline-bar-glow {
+  opacity: 0.4;
+}
+
+.timeline-item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover p {
+  color: white;
+}
+
+.mobile-swipe-indicator {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .mobile-swipe-indicator {
+    display: none;
+  }
+}
+
+.indicator-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.indicator-dot.active {
+  background-color: var(--color-primary-light);
+}
