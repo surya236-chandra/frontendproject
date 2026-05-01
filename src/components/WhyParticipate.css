@@ -1,0 +1,292 @@
+.why-participate {
+  width: 100%;
+  background-color: #0c0c0c;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 10rem 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wp-header {
+  position: relative;
+  z-index: 20;
+  margin-bottom: 5rem;
+}
+
+.wp-subtitle {
+  color: #8B5CF6; /* Purple matching design */
+  font-size: 0.95rem;
+  letter-spacing: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* --- BACKGROUND RINGS --- */
+.radar-rings {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.15); /* Faint purple circles */
+  animation: radarPulse 7s ease-in-out infinite;
+}
+
+.ring-1 { width: 300px; height: 300px; }
+.ring-2 { width: 450px; height: 450px; animation-delay: -1.2s; }
+.ring-3 { width: 600px; height: 600px; animation-delay: -2.4s; }
+.ring-4 { width: 750px; height: 750px; animation-delay: -3.6s; }
+
+@keyframes radarPulse {
+  0%, 100% { opacity: 0.42; transform: scale(0.98); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+}
+
+/* --- MAIN CONTAINER --- */
+.wp-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 400px;
+  z-index: 10;
+}
+
+/* --- SIDE PANELS --- */
+.wp-panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(50% - 220px); /* Leave 440px in center for astronaut */
+  height: 300px;
+  background-color: #8B5CF6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel-left {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.panel-right {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Content inside panels */
+.panel-content {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.benefit-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.active-benefit {
+  position: relative;
+  padding: 10px;
+}
+
+/* --- CONNECTOR TABS --- */
+.connector {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background-color: #8B5CF6;
+}
+
+/* Left panel connectors sticking out to the right */
+.panel-left .top-connector { top: 50px; right: -60px; }
+.panel-left .bottom-connector { bottom: 50px; right: -60px; }
+
+/* Right panel connectors sticking out to the left */
+.panel-right .top-connector { top: 50px; left: -60px; }
+.panel-right .bottom-connector { bottom: 50px; left: -60px; }
+
+/* --- ASTRONAUT --- */
+.wp-center-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  z-index: 20;
+  pointer-events: none;
+  animation: floatWP 6s ease-in-out infinite;
+}
+
+.astronaut-motion-field {
+  position: absolute;
+  inset: -22%;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent 58%);
+  filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.28));
+}
+
+.motion-orbit {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.34);
+  animation: orbitSpin 14s linear infinite;
+}
+
+.orbit-b {
+  inset: 20%;
+  border-color: rgba(59, 130, 246, 0.24);
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+
+.orbit-c {
+  inset: 33%;
+  border-color: rgba(255, 255, 255, 0.13);
+  animation-duration: 18s;
+}
+
+.motion-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9d6cff;
+  box-shadow: 0 0 18px #8b5cf6;
+}
+
+.dot-a {
+  top: 17%;
+  left: 50%;
+  animation: dotOrbitA 8s linear infinite;
+}
+
+.dot-b {
+  right: 18%;
+  bottom: 28%;
+  background: #6ea8ff;
+  animation: dotOrbitB 11s linear infinite;
+}
+
+.motion-scan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 54%;
+  transform-origin: 50% 0;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.65), transparent);
+  animation: orbitSpin 9s linear infinite;
+}
+
+.wp-astronaut {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+@keyframes floatWP {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, -55%); }
+}
+
+@keyframes orbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes dotOrbitA {
+  to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes dotOrbitB {
+  to { transform: rotate(-360deg) translateX(118px) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring,
+  .wp-center-visual,
+  .motion-orbit,
+  .motion-dot,
+  .motion-scan {
+    animation: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .wp-panel {
+    width: calc(50% - 150px);
+    height: auto;
+    padding: 30px 0;
+  }
+  .wp-center-visual { width: 250px; height: 250px; }
+  .panel-content { padding: 0 20px; gap: 1.5rem; }
+  .connector { width: 30px; height: 30px; }
+  .panel-left .top-connector { right: -30px; }
+  .panel-left .bottom-connector { right: -30px; }
+  .panel-right .top-connector { left: -30px; }
+  .panel-right .bottom-connector { left: -30px; }
+}
+
+@media (max-width: 768px) {
+  .wp-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 4rem;
+  }
+  .wp-panel {
+    position: relative;
+    top: auto;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  .wp-center-visual {
+    position: relative;
+    top: auto; left: auto; transform: none;
+    margin: 0 auto;
+    animation: none;
+  }
+  .connector { display: none; }
+  .panel-left, .panel-right {
+    left: auto; right: auto;
+  }
+  .text-right, .text-left { text-align: center; }
+}
