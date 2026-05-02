@@ -27,7 +27,7 @@
   top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 32px);
+  width: calc(100% - 32px); 
   max-width: 880px;
   background-color: white;
   border-radius: 50px;
@@ -151,7 +151,7 @@
 .hero-text-layer {
   position: absolute;
   top: 35%;
-  left: 27%;
+  left: 23%;
   transform: translateY(-50%);
   z-index: 2; /* Behind the model */
 }
