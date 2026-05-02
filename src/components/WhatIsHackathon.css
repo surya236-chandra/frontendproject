@@ -28,6 +28,8 @@
 .wih-content {
   flex: 1;
   max-width: 550px;
+  min-width: 0; /* Prevent overflow in flex containers */
+  width: 100%;
 }
 
 .wih-title {
@@ -140,17 +142,26 @@
 
 @media (max-width: 1024px) {
   .wih-collage {
+    width: 100%;
+    max-width: 450px;
     margin: 0 auto;
-    transform: scale(0.9);
   }
 }
 
 @media (max-width: 600px) {
-  .wih-collage {
-    transform: scale(0.7);
-    transform-origin: left top;
-    margin-bottom: -100px;
+  .what-is-hackathon {
+    padding: 4rem 5%;
   }
+  .wih-collage {
+    width: 100%;
+    max-width: 350px;
+    height: 380px;
+  }
+  .img-globe { width: 140px; height: 170px; left: 140px; }
+  .img-laptop { top: 45px; left: 45px; width: 80px; height: 110px; }
+  .img-vr { top: 160px; left: 0; width: 145px; height: 95px; }
+  .img-team { top: 260px; left: 45px; width: 130px; height: 130px; }
+  .img-people { top: 255px; left: 185px; width: 140px; height: 85px; }
 }
 
 .collage-img {
