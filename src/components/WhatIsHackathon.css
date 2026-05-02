@@ -8,6 +8,49 @@
   color: white;
 }
 
+.what-is-hackathon::before {
+  content: '';
+  position: absolute;
+  top: -6rem;
+  right: -12rem;
+  width: 52rem;
+  height: 52rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(111, 50, 254, 0.16) 0%,
+    rgba(88, 28, 220, 0.08) 40%,
+    transparent 72%);
+  filter: blur(65px);
+  animation: smokeShift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.what-is-hackathon::after {
+  content: '';
+  position: absolute;
+  bottom: -8rem;
+  left: -8rem;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(139, 92, 246, 0.13) 0%,
+    rgba(88, 28, 220, 0.06) 44%,
+    transparent 70%);
+  filter: blur(75px);
+  animation: smokeShift 18s ease-in-out infinite alternate-reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes smokeShift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(3rem, -2rem) scale(1.06); }
+  66%  { transform: translate(-2rem, 3rem) scale(0.96); }
+  100% { transform: translate(2rem, 1rem) scale(1.04); }
+}
+
 .wih-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -135,15 +178,15 @@
 /* --- RIGHT SIDE: COLLAGE --- */
 .wih-collage {
   position: relative;
-  width: 450px;
-  height: 500px;
+  width: 580px;
+  height: 640px;
   flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {
   .wih-collage {
     width: 100%;
-    max-width: 450px;
+    max-width: 580px;
     margin: 0 auto;
   }
 }
@@ -154,14 +197,14 @@
   }
   .wih-collage {
     width: 100%;
-    max-width: 350px;
-    height: 380px;
+    max-width: 420px;
+    height: 470px;
   }
-  .img-globe { width: 140px; height: 170px; left: 140px; }
-  .img-laptop { top: 45px; left: 45px; width: 80px; height: 110px; }
-  .img-vr { top: 160px; left: 0; width: 145px; height: 95px; }
-  .img-team { top: 260px; left: 45px; width: 130px; height: 130px; }
-  .img-people { top: 255px; left: 185px; width: 140px; height: 85px; }
+  .img-globe  { width: 175px; height: 215px; left: 175px; }
+  .img-laptop { top: 55px;   left: 55px;    width: 100px; height: 140px; }
+  .img-vr     { top: 205px;  left: 0;       width: 180px; height: 120px; }
+  .img-team   { top: 330px;  left: 55px;    width: 165px; height: 160px; }
+  .img-people { top: 325px;  left: 230px;   width: 175px; height: 135px; }
 }
 
 .collage-img {
@@ -223,38 +266,38 @@
 
 /* Image Positions and Sizes */
 .img-laptop {
-  top: 60px;
-  left: 60px;
-  width: 100px;
-  height: 140px;
+  top: 78px;
+  left: 78px;
+  width: 130px;
+  height: 182px;
 }
 
 .img-globe {
   top: 0;
-  left: 190px;
-  width: 180px;
-  height: 220px;
+  left: 245px;
+  width: 235px;
+  height: 286px;
 }
 
 .img-vr {
-  top: 210px;
+  top: 273px;
   left: 0;
-  width: 190px;
-  height: 120px;
+  width: 247px;
+  height: 156px;
 }
 
 .img-team {
-  top: 340px;
-  left: 60px;
-  width: 170px;
-  height: 170px;
+  top: 442px;
+  left: 78px;
+  width: 221px;
+  height: 221px;
 }
 
 .img-people {
-  top: 330px;
-  left: 240px;
-  width: 180px;
-  height: 110px;
+  top: 429px;
+  left: 312px;
+  width: 234px;
+  height: 143px;
 }
 
 /* Crosshair lines */
@@ -275,11 +318,11 @@
   top: -20px;
 }
 
-.line-1.crosshair-h { top: 210px; }
-.line-2.crosshair-h { top: 340px; }
+.line-1.crosshair-h { top: 273px; }
+.line-2.crosshair-h { top: 442px; }
 
-.line-1.crosshair-v { left: 190px; }
-.line-2.crosshair-v { left: 240px; }
+.line-1.crosshair-v { left: 245px; }
+.line-2.crosshair-v { left: 312px; }
 
 /* Plus marks */
 .plus-mark {
@@ -290,6 +333,6 @@
   transform: translate(-50%, -50%);
 }
 
-.pm-1 { top: 210px; left: 190px; }
-.pm-2 { top: 340px; left: 60px; }
-.pm-3 { top: 330px; left: 240px; }
+.pm-1 { top: 273px; left: 245px; }
+.pm-2 { top: 442px; left: 78px; }
+.pm-3 { top: 429px; left: 312px; }

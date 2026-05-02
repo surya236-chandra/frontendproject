@@ -1,24 +1,55 @@
 .about-hackathon {
   width: 100%;
-  background-color: #0c0c0c; /* Deep black background matching the image */
+  background-color: #0c0c0c;
   position: relative;
   overflow: hidden;
   padding: 8rem 0 6rem 0;
   font-family: 'Inter', sans-serif;
 }
 
+/* Animated purple smoke orbs */
+.about-hackathon::before {
+  content: '';
+  position: absolute;
+  top: -8rem;
+  left: -10rem;
+  width: 55rem;
+  height: 55rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(111, 50, 254, 0.18) 0%,
+    rgba(88, 28, 220, 0.10) 38%,
+    transparent 72%);
+  filter: blur(60px);
+  animation: smokeShift 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Subtle purple glow at the bottom left/center */
 .about-hackathon::after {
   content: '';
   position: absolute;
-  bottom: -50px;
-  left: 30%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 400px;
-  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-  z-index: 0;
+  bottom: -4rem;
+  right: -8rem;
+  width: 44rem;
+  height: 44rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(139, 92, 246, 0.14) 0%,
+    rgba(88, 28, 220, 0.07) 42%,
+    transparent 70%);
+  filter: blur(72px);
+  animation: smokeShift 16s ease-in-out infinite alternate-reverse;
   pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes smokeShift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(3rem, -2rem) scale(1.06); }
+  66%  { transform: translate(-2rem, 3rem) scale(0.96); }
+  100% { transform: translate(2rem, 1rem) scale(1.04); }
 }
 
 /* --- SIDE DECORATIVE BLOCKS --- */
