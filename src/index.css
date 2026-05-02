@@ -32,6 +32,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-y: scroll;        /* always reserve scrollbar space */
+  scrollbar-gutter: stable;  /* prevent layout shift */
   background-color: var(--color-background);
 }
 

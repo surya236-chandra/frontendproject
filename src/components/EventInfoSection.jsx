@@ -65,8 +65,17 @@ const EventInfoSection = () => {
 
   const selectSchedule = (index) => {
     setActiveSchedule(index);
-    const node = timelineRef.current?.children[index];
-    node?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    const container = timelineRef.current;
+    const node = container?.children[index];
+    if (!container || !node) return;
+
+    // Scroll only the timeline container — never the page
+    const containerCenter = container.offsetWidth / 2;
+    const nodeCenter = node.offsetLeft + node.offsetWidth / 2;
+    container.scrollTo({
+      left: nodeCenter - containerCenter,
+      behavior: 'smooth',
+    });
   };
 
   const moveSchedule = (direction) => {
